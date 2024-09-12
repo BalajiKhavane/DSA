@@ -19,7 +19,7 @@ int main(){
         }
         cout<<endl;
     }
-    
+
     for(int i=1;i<=n;i+=1){
         for(int j=n;j>=i;j--){
             cout<<"* ";
@@ -35,9 +35,6 @@ int main(){
         }
         cout<<endl;
     }
-
-
-    
 
     return 0;
 }
