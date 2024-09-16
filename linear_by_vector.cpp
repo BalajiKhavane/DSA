@@ -9,8 +9,12 @@ int main(){
     vec.push_back(28);
     vec.push_back(23);
 
+    for(int i :vec){
+        cout<<i<<"\t";
+    }
+
     int key,count=0;
-    cout<<"Enter the key element :"<<endl;
+    cout<<"\nEnter the key element :"<<endl;
     cin>>key;
 
     for(int i: vec){
