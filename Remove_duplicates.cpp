@@ -8,9 +8,7 @@ void removeDuplicates(vector <int>& arr){
 	int size= arr.size();
 	vector <int> vec;
 	for(int i=1;i<=size;i++){
-		if(arr[i]==arr[i-1]){
-			
-		}else{
+		if(arr[i] != arr[i-1]){
 			vec.push_back(arr[i-1]);
 		}
 	}	
