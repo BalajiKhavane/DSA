@@ -9,6 +9,7 @@ int main(){
     Hashmap["Balaji"]=98;
     Hashmap["Shivtej"]=90;
     Hashmap["Chinmay"]=95;
+    Hashmap["Vaibhav"]=87;
 
     Hashmap.insert(pair<string,int>("Vivek",64));
     Hashmap.insert(make_pair("Keshav",69));
