@@ -23,7 +23,7 @@ int main(){
     result = groupAnagrams(strs);
     for(auto i : result){
         for(auto j : i){
-            cout<<i<<"\t";
+            cout<<j<<"\t";
         }cout<<endl;
     }cout<<endl;
 
