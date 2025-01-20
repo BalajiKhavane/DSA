@@ -10,6 +10,7 @@ void numbers_to_n(int n){
 }
 int main(){
     numbers_to_n(5);
-
+    numbers_to_n(4);
+    
     return 0;
 }
