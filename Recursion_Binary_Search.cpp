@@ -1,50 +1,23 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
-
-int binarySearch(vector<int>vec ,int key, int low, int high){
-    if(low > high){
-        return -1;
-    }    
-    int mid= low + (high - low)/2;
-    if(key < vec[mid]){
-        return binarySearch(vec,key,low,mid-1);
-    }else if(key > vec[mid]){
-        return binarySearch(vec,key,mid+1,high);
-    }else{
-        return mid+1;
+int binarySearch(vector<int>& nums, int st, int end, int target){
+    if(st <= end){    
+        int mid = st + (end - st)/2;     // Calculate the mid-point to avoid overflow
+        if(nums[mid] > target){
+            return binarySearch(nums, st, mid-1, target);   // Search right half
+        }else if(nums[mid] < target){
+            return binarySearch(nums, mid+1, end, target);  // Search left half
+        }else{
+            return mid;     // Target found at index mid
+        }
     }
-    
+    return -1;    // Target not found
 }
-
 int main(){
-    int n,low=0,high,key;
-    vector<int>vec;
-    cout<<"Enter the total number of elements :"<<endl;
-    cin>>n;
-    cout<<"Enter the sorted elements :"<<endl;
-    for(int i=0;i<n;i++){
-        int el;
-        cin>>el;
-        vec.push_back(el);
-    }
-
-    cout<<"Entered elements are :"<<endl;
-    sort(vec.begin(),vec.end());
-    for(int i: vec){
-        cout<<i<<"\t";
-    }
-
-    cout<<"\nEnter the target element :"<<endl;
-    cin>>key;
-    high=--n;
-    int result = binarySearch(vec,key,low,high);
-    if(result != -1){
-        cout<<"Element found at "<<result<<" location"<<endl;    
-    }else{
-        cout<<"Search is unsuccessful."<<endl;
-    }
+    vector<int> nums{2,4,7,34,52,67,90};
+    int st = 0, end = nums.size()-1, target = 52;
+    cout<<binarySearch(nums, st, end, target)<<endl;
 
     return 0;
 }
