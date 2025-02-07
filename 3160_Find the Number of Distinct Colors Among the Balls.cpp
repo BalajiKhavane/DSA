@@ -39,7 +39,7 @@ int main(){
     queries = {{1,4},{2,5},{1,3},{3,4}};
     result = queryResults(limit, queries);
     limit = 4; 
-    queries = {{0,1},{1,2}{2,2},{3,4},{4,5}};
+    queries = {{0,1},{1,2},{2,2},{3,4},{4,5}};
     result = queryResults(limit, queries);
 
     for(auto i : result){
