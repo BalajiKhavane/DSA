@@ -2,28 +2,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 string reverseWords(string s) {
-    string temp;
-    vector<string> vec;
-    for(int i=0;i<s.size();i++){
-        if(s[i] == ' '){
-            reverse(temp.begin(),temp.end());
-            vec.push_back(temp);
-            temp.clear();
-        }else if(i == s.size()-1){
-            temp += s[i];
-            reverse(temp.begin(),temp.end());
-            vec.push_back(temp);
-            temp.clear();
-        }else{
-            temp += s[i];
-        }
+    string temp,ans;
+    stringstream ss (s);
+    while(ss >> temp){
+        reverse(temp.begin(),temp.end());
+        ans += " " + temp;
     }
-    temp.clear();
-    for(auto i : vec){
-        temp += ' ' + i;
-    }
-    temp.erase(temp.begin());
-    return temp;
+    ans.erase(ans.begin());
+    return ans;
 }
 int main(){
     string s = "Let's take LeetCode contest";
